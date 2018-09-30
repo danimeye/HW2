@@ -1,0 +1,11 @@
+<form action="{{ url_for('albumResults') }} " method="POST">
+	{{ form.hidden_tag() }}
+	{% for message in get_flashed_messages() %}
+	{{ message }}
+	{% endfor %}
+
+  	{{ form.album_name.label }} {{ form.album_name() }} <br>
+  	{{ form.rating.label }} {{ form.rating() }}
+  	{{ form.csrf_token }}
+  	{{ form.submit() }}
+</form>
